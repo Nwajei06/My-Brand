@@ -31,27 +31,29 @@ function Navbar() {
                 <NavLink className="nav-link" to="/" end>Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/service">About Us</NavLink>
+                <NavLink className="nav-link" to="/about">About Us</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/services">Our Services</NavLink>
+                <NavLink className="nav-link" to="/service">Our Services</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Resources
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Blog</a></li>
-                  <li><a className="dropdown-item" href="#">Case Studies</a></li>
-                  <li><a className="dropdown-item" href="#">FAQ</a></li>
-                </ul>
-              </li>
+  <NavLink
+    className="nav-link dropdown-toggle"
+    to="#"
+    id="resourcesDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Resources
+  </NavLink>
+  <ul className="dropdown-menu" aria-labelledby="resourcesDropdown">
+    <li><NavLink className="dropdown-item" to="/blog">Blog</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/case-studies">Case Studies</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/faq">FAQ</NavLink></li>
+  </ul>
+</li>
+
               <li className="nav-item">
                 <NavLink className="nav-link" to="/courses">Courses</NavLink>
               </li>
