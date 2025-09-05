@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 // import "./Hero.css";
 
 function Hero() {
@@ -46,14 +47,25 @@ function Hero() {
       >
         <br /><br /><br />
         <button className="linksbut">
-          <i className="fas fa-envelope"></i> Email
+          <Link to="mailto:nwajeijoshua55@gmail.com"
+          style={{ color: "red", textDecoration: "none"}}
+          
+          >
+          <i className="fas fa-envelope"></i> Email </Link>
         </button>
         <button className="linksbut">
-          <i className="fab fa-whatsapp"></i> WhatsApp
+        <Link 
+  to="https://wa.me/2348131680922" 
+  style={{ color: "red", textDecoration: "none"}}
+> 
+  <i className="fab fa-whatsapp"></i> WhatsApp
+</Link>
+
         </button>
       </motion.span>
     </div>
   );
 }
+import { Link } from 'react-router-dom';
 
 export default Hero;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { NavLink } from "react-router-dom";
 import {  FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
@@ -15,9 +16,9 @@ export default function Footer() {
             to elevate your brand and business online.
           </p>
           <div className="social-icons">
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaWhatsapp /></a>
+            <NavLink to="https://x.com/Api_daddy001"><FaTwitter /></NavLink>
+            <NavLink to="https://www.linkedin.com/in/joshua-nwajei-479262344/"><FaLinkedinIn /></NavLink>
+            <NavLink to="https://wa.me/2348131680922" ><FaWhatsapp /></NavLink>
           </div>
         </div>
 

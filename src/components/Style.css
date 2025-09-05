@@ -98,6 +98,14 @@
   font-size: 18px;
   padding: 12px;
 }
+.offcanvas .dropdown-menu {
+  position: static;
+  float: none;
+  background: #fff;
+  box-shadow: none;
+}
+
+
 
 
 /* .heroimage {
