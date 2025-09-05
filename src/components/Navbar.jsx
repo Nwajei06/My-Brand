@@ -1,32 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Offcanvas } from "bootstrap"; // Bootstrap JS API
+import { Offcanvas } from "bootstrap";
 
 function Navbar() {
- const handleNavClick = () => {
-  const offcanvasElement = document.getElementById("mobileNav");
-  if (offcanvasElement) {
-    const offcanvasInstance = Offcanvas.getInstance(offcanvasElement);
-    if (offcanvasInstance) {
-      offcanvasInstance.hide();
-      // 🧹 Clean up leftover backdrop manually
-      const backdrop = document.querySelector(".offcanvas-backdrop");
-      if (backdrop) {
-        backdrop.remove();
-        document.body.classList.remove("offcanvas-backdrop", "modal-open"); // ensure body resets
+  const handleNavClick = () => {
+    const offcanvasElement = document.getElementById("mobileNav");
+    if (offcanvasElement) {
+      const offcanvasInstance = Offcanvas.getInstance(offcanvasElement);
+      if (offcanvasInstance) {
+        offcanvasInstance.hide();
+        // cleanup leftover backdrop
+        const backdrop = document.querySelector(".offcanvas-backdrop");
+        if (backdrop) backdrop.remove();
+        document.body.classList.remove("offcanvas-backdrop", "modal-open");
       }
     }
-  }
-};
-
+  };
 
   return (
     <header className="navbar-container">
       <div className="navbar-wrapper container d-flex justify-content-between align-items-center">
         {/* Logo */}
         <NavLink to="/" className="navbar-brand">
-          <img src="/images/logo2.png" alt="Logo" className="logo-img" /> Chijo
-          Concept
+          <img src="/images/logo2.png" alt="Logo" className="logo-img" /> Chijo Concept
         </NavLink>
 
         {/* Desktop Nav */}
@@ -38,8 +34,12 @@ function Navbar() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">About Us</NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/service">Our Services</NavLink>
+            <li className="nav-item dropdown">
+              <NavLink className="nav-link dropdown-toggle" to="/service">Our Services</NavLink>
+              <ul className="dropdown-menu">
+                <li><NavLink className="dropdown-item" to="/web-design">Web Design</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/branding">Branding</NavLink></li>
+              </ul>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/courses">Courses</NavLink>
@@ -63,7 +63,7 @@ function Navbar() {
           </button>
         </nav>
 
-        {/* Offcanvas for Mobile */}
+        {/* Mobile Offcanvas */}
         <div
           className="offcanvas offcanvas-start"
           tabIndex="-1"
@@ -71,13 +71,8 @@ function Navbar() {
           aria-labelledby="mobileNavLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="mobileNavLabel">Menu</h5>
-            <button
-              type="button"
-              className="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+            <h5 className="offcanvas-title">Menu</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body">
             <ul className="navbar-nav nav-box">

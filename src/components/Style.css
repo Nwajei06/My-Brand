@@ -8,101 +8,59 @@
 }
 
 .logo-img {
-  max-height: 110px;
+  max-height: 80px;
 }
 
 .navbar-brand {
-  font-family: Courier Prime;
+  font-family: "Courier Prime", monospace;
   font-size: 20px;
+  font-weight: bold;
 }
 
-/* Make nav links wrap on small screens */
-.nav-box {
-  display: flex;
-  flex-wrap: wrap; /* allow wrapping instead of collapsing */
-  gap: 10px;
-  justify-content: center;
-}
-
-
-/* Desktop only styles */
-@media (min-width: 992px) {
-  .nav-box {
-    height: 80px; /* only on large screens */
-  }
-}
-
-/* Default nav links */
+/* Desktop menu */
 .nav-box .nav-link {
   color: #333;
   font-weight: 500;
-  margin: 0 10px;
+  margin: 0 8px;
   padding: 8px 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
 
-/* Active link (NavLink adds "active" automatically) */
-/* Mobile default */
+/* Active */
 .nav-box .nav-link.active {
-  color: #e63946 !important;
-  background: transparent; /* no red block in mobile */
+  background-color: #e63946;
+  color: #fff !important;
   font-weight: 600;
 }
 
-/* Desktop active link */
-@media (min-width: 992px) {
-  .nav-box .nav-link.active {
-    background-color: #e63946;
-    color: #fff !important;
-    border-radius: 6px;
-  }
-}
-
-/* Hover effect */
+/* Hover */
 .nav-box .nav-link:not(.active):hover {
   border: 2px solid #e63946;
   color: #e63946;
 }
 
-/* Force dropdown to float always */
-.navbar-nav .dropdown-menu {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  margin-top: 0.5rem !important;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
-  z-index: 2000;
-  display: none; /* start hidden */
-}
-
-/* Show when active */
-.nav-item.dropdown.show .dropdown-menu {
+/* Dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
-
-
-.navbar-toggler {
-  border: none;
+.dropdown-menu {
+  position: absolute;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
 }
 
-/* Smooth fade + slide for offcanvas */
-.offcanvas {
-  transition: transform 1s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Optional: make links larger for mobile */
+/* Mobile menu */
 .offcanvas .nav-link {
   font-size: 18px;
   padding: 12px;
 }
 .offcanvas .dropdown-menu {
   position: static;
-  float: none;
-  background: #fff;
   box-shadow: none;
+  border: none;
 }
 
 
