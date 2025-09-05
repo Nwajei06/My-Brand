@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const statCards = [
   { id: "award",   title: "Award Winning",  note: "Best Web Designers in Nigeria",   icon: "🏆" },
-  { id: "clients", title: "500+ Clients",   note: "Satisfied customers nationwide",  icon: "👥" },
-  { id: "cities",  title: "Lagos & Abuja",  note: "Offices in major cities",         icon: "📍" },
+  { id: "clients", title: "100+ Clients",   note: "Satisfied customers nationwide",  icon: "👥" },
+  { id: "cities",  title: "Lagos",  note: "distance is not a barrier to satisfy our clients",  icon: "📍" },
   { id: "support", title: "24/7 Support",   note: "Always here to help you",         icon: "⏰" },
 ];
 
@@ -23,7 +23,7 @@ const infoCards = [
     title: "Our Mission",
     lines: [
       "Help businesses build their brand through professional, results-driven websites.",
-      "Create websites & software that match each client’s needs.",
+      "Create websites & designs that match each client’s needs.",
     ],
   },
   {
@@ -56,16 +56,19 @@ export default function AboutSection() {
       
       {/* Big Intro Box */}
       <div className="intro-box">
-        <h2 className="intro-title">Website Designer Nigeria</h2>
-        <p>
-          Website Designer Nigeria are the best web designers in Nigeria. We are passionate about helping businesses in the tech,
-          finance, health, and corporate industries fully leverage the latest software technologies. 
-          As a leading web design company in Lagos and Abuja, our team provides tailored solutions to meet your exact business needs.
-        </p>
-        <p>
-          Additionally, we help you integrate the latest payment gateways enabling you to accept payments locally and internationally.
-          This integration ensures smooth transactions for your customers no matter where they are located.
-        </p>
+        <h2 className="intro-title">Chijo Concept</h2>
+      <p>
+  At Chijo Concept, we are dedicated to being one of the leading web design companies in Nigeria. 
+  Our passion lies in helping businesses in industries such as technology, finance, healthcare, and corporate sectors 
+  harness the full potential of modern software solutions. We deliver tailored web development services 
+  that align perfectly with your business goals.
+</p>
+
+<p>
+  We also specialize in integrating the latest payment gateways, enabling you to accept payments seamlessly both locally and internationally. 
+  This ensures that your customers enjoy smooth and secure transactions, no matter where they are in the world.
+</p>
+
       </div>
 
       {/* 4 Stat Boxes */}
