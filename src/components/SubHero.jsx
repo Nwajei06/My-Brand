@@ -36,7 +36,7 @@ export default function SubHero() {
           viewport={{ once: true }}
         >
           <button className="btn-primary"> <a href="https://wa.me/2348131680922" style={{textDecoration:"none", color:"white"}}> Get Started</a> </button>
-          <button className="btn-secondary"> <NavLink to="/about" className="cha" style={{textDecoration:"none", color:"white"}}> Leran more</NavLink></button>
+          <button className="btn-secondary"> <NavLink to="/about" className="cha" style={{textDecoration:"none", color:"white"}}> Learn more</NavLink></button>
         </motion.div>
       </div>
     </section>
