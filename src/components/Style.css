@@ -62,7 +62,14 @@
   box-shadow: none;
   border: none;
 }
+/* .offcanvas {
+  max-width: 80%; 
+} */
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* stop sideways movement */
+}
 
 
 
