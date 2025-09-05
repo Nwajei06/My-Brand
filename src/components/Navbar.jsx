@@ -3,13 +3,22 @@ import { NavLink } from "react-router-dom";
 import { Offcanvas } from "bootstrap"; // Bootstrap JS API
 
 function Navbar() {
-  const handleNavClick = () => {
-    const offcanvasElement = document.getElementById("mobileNav");
-    if (offcanvasElement) {
-      const offcanvasInstance = Offcanvas.getInstance(offcanvasElement);
-      if (offcanvasInstance) offcanvasInstance.hide();
+ const handleNavClick = () => {
+  const offcanvasElement = document.getElementById("mobileNav");
+  if (offcanvasElement) {
+    const offcanvasInstance = Offcanvas.getInstance(offcanvasElement);
+    if (offcanvasInstance) {
+      offcanvasInstance.hide();
+      // 🧹 Clean up leftover backdrop manually
+      const backdrop = document.querySelector(".offcanvas-backdrop");
+      if (backdrop) {
+        backdrop.remove();
+        document.body.classList.remove("offcanvas-backdrop", "modal-open"); // ensure body resets
+      }
     }
-  };
+  }
+};
+
 
   return (
     <header className="navbar-container">
@@ -19,6 +28,27 @@ function Navbar() {
           <img src="/images/logo2.png" alt="Logo" className="logo-img" /> Chijo
           Concept
         </NavLink>
+
+        {/* Desktop Nav */}
+        <nav className="navbar d-none d-lg-block">
+          <ul className="navbar-nav nav-box d-flex flex-row">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/" end>Home</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about">About Us</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/service">Our Services</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/courses">Courses</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+            </li>
+          </ul>
+        </nav>
 
         {/* Mobile Hamburger */}
         <nav className="navbar navbar-light d-lg-none">
@@ -33,7 +63,7 @@ function Navbar() {
           </button>
         </nav>
 
-        {/* Offcanvas */}
+        {/* Offcanvas for Mobile */}
         <div
           className="offcanvas offcanvas-start"
           tabIndex="-1"
@@ -41,9 +71,7 @@ function Navbar() {
           aria-labelledby="mobileNavLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="mobileNavLabel">
-              Menu
-            </h5>
+            <h5 className="offcanvas-title" id="mobileNavLabel">Menu</h5>
             <button
               type="button"
               className="btn-close text-reset"
@@ -54,29 +82,19 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav nav-box">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/" end onClick={handleNavClick}>
-                  Home
-                </NavLink>
+                <NavLink className="nav-link" to="/" end onClick={handleNavClick}>Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/about" onClick={handleNavClick}>
-                  About Us
-                </NavLink>
+                <NavLink className="nav-link" to="/about" onClick={handleNavClick}>About Us</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/service" onClick={handleNavClick}>
-                  Our Services
-                </NavLink>
+                <NavLink className="nav-link" to="/service" onClick={handleNavClick}>Our Services</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/courses" onClick={handleNavClick}>
-                  Courses
-                </NavLink>
+                <NavLink className="nav-link" to="/courses" onClick={handleNavClick}>Courses</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact" onClick={handleNavClick}>
-                  Contact Us
-                </NavLink>
+                <NavLink className="nav-link" to="/contact" onClick={handleNavClick}>Contact Us</NavLink>
               </li>
             </ul>
           </div>

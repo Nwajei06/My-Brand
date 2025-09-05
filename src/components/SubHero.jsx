@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export default function SubHero() {
   return (
@@ -34,8 +35,8 @@ export default function SubHero() {
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <button className="btn-primary">Get Started</button>
-          <button className="btn-secondary">Learn More</button>
+          <button className="btn-primary"> <a href="https://wa.me/2348131680922" style={{textDecoration:"none", color:"white"}}> Get Started</a> </button>
+          <button className="btn-secondary"> <NavLink to="/about" className="cha" style={{textDecoration:"none", color:"white"}}> Leran more</NavLink></button>
         </motion.div>
       </div>
     </section>
