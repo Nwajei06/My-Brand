@@ -22,7 +22,7 @@ function Navbar() {
       <div className="navbar-wrapper container d-flex justify-content-between align-items-center">
         {/* Logo */}
         <NavLink to="/" className="navbar-brand">
-          <img src="/images/logo2.png" alt="Logo" className="logo-img" /> Chijo Concept
+          <img  src="/images/mylogo.png" alt="Logo" className="logo-img" /> 
         </NavLink>
 
         {/* Desktop Nav */}
