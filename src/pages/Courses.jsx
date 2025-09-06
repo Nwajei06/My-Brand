@@ -25,19 +25,19 @@ const courses = [
     id: 4,
     title: "SEO & Digital Marketing",
     desc: "Boost visibility and traffic with proven SEO and marketing strategies.",
-    icon: "/images/seo.png",
+    icon: "/images/seo-icon.png",
   },
   {
     id: 5,
     title: "E-commerce Development",
     desc: "Build and manage online stores with WooCommerce & Shopify.",
-    icon: "/images/ecommerce.png",
+    icon: "/images/ecommerce-icon.png",
   },
   {
     id: 6,
-    title: "Mobile App Development",
-    desc: "Develop cross-platform apps using React Native and other tools.",
-    icon: "/images/mobile.png",
+    title: "Website Maintainance",
+    desc: "Help sacale and mainatain websites for brands",
+    icon: "/images/maintenance-icon.png",
   },
 ];
 
